@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bioma Cerrado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/estilos.css"/>
+</head>
+<body>
+
+<!-- Pétalas -->
+<canvas id="petals-canvas"></canvas>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-trees" aria-hidden="true">
+    <div class="tree"><div class="tree-canopy" style="width:60px;height:80px"></div><div class="tree-trunk" style="width:10px;height:50px"></div></div>
+    <div class="tree"><div class="tree-canopy" style="width:90px;height:120px"></div><div class="tree-trunk" style="width:14px;height:70px"></div></div>
+    <div class="tree"><div class="tree-canopy" style="width:50px;height:65px"></div><div class="tree-trunk" style="width:8px;height:40px"></div></div>
+    <div class="tree"><div class="tree-canopy" style="width:80px;height:100px"></div><div class="tree-trunk" style="width:12px;height:60px"></div></div>
+    <div class="tree"><div class="tree-canopy" style="width:55px;height:75px"></div><div class="tree-trunk" style="width:9px;height:45px"></div></div>
+    <div class="tree"><div class="tree-canopy" style="width:70px;height:90px"></div><div class="tree-trunk" style="width:11px;height:55px"></div></div>
+    <div class="tree"><div class="tree-canopy" style="width:45px;height:60px"></div><div class="tree-trunk" style="width:8px;height:35px"></div></div>
+  </div>
+
+  <p class="hero-eyebrow">Trabalho de Biologia · Ecologia e Meio Ambiente</p>
+  <h1 class="hero-title">Bioma<br/><span>Cerrado</span></h1>
+  <br>
+  <p class="hero-subtitle">A Savana Brasileira : um dos ecossistemas mais ricos e ameaçados do planeta.</p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">2.000.000</div>
+      <div class="stat-label">km² originais</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50%+</div>
+      <div class="stat-label">já devastados</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10</div>
+      <div class="stat-label">estados + 1 Distrito federal</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">bacias hidrográficas</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav-pills">
+  <a class="pill" href="#geo">🌎 Localização</a>
+  <a class="pill" href="#clima">☀️ Clima</a>
+  <a class="pill" href="#flora">🌿 Flora</a>
+  <a class="pill" href="#fauna">🐺 Fauna</a>
+  <a class="pill" href="#biodiversidade">🦋 Biodiversidade</a>
+  <a class="pill" href="#conservacao">🛡️ Conservação</a>
+  <a class="pill" href="#curiosidades">💡 Curiosidades</a>
+</nav>
+
+<!-- ═══ LOCALIZAÇÃO ═══ -->
+<section class="section" id="geo">
+  <p class="section-tag">Distribuição Geográfica</p>
+  <h2 class="section-title">Onde fica o <em>Cerrado</em>?</h2>
+  <div class="divider"></div>
+  <div class="geo-wrap">
+    <div>
+      <p class="geo-desc">O Cerrado ocupa principalmente o <strong>Brasil Central</strong>, abrangendo 10 estados e o Distrito Federal. É o segundo maior bioma do país, com área original superior a 2 milhões de km².</p>
+      <p class="geo-desc" style="font-size:0.73rem;color:#aaa">Fonte: IBGE — Mapeamento de Biomas e Território</p>
+    </div>
+    <div>
+      <div class="estados-list">
+        <span class="estado-chip">Goiás</span><span class="estado-chip">Mato Grosso</span>
+        <span class="estado-chip">Mato Grosso do Sul</span><span class="estado-chip">Minas Gerais</span>
+        <span class="estado-chip">Bahia</span><span class="estado-chip">Tocantins</span>
+        <span class="estado-chip">Maranhão</span><span class="estado-chip">São Paulo</span>
+        <span class="estado-chip">Piauí</span><span class="estado-chip">Rondônia</span>
+        <span class="estado-chip">Distrito Federal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIMA ═══ -->
+<section style="background:linear-gradient(to bottom,var(--bege),#EDE0C4);padding:0.5rem 0" id="clima">
+  <div class="section">
+    <p class="section-tag">Clima</p>
+    <h2 class="section-title">Estações <em>bem definidas</em></h2>
+    <div class="divider"></div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">🌧️</div>
+        <div class="card-title">Verão Chuvoso</div>
+        <p class="card-text">Chuvas intensas entre outubro e março, essenciais para recarregar aquíferos e nascentes do bioma.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌵</div>
+        <div class="card-title">Inverno Seco</div>
+        <p class="card-text">Estiagem prolongada de abril a setembro, com baixa umidade e alta incidência de queimadas.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌡️</div>
+        <div class="card-title">Temperaturas Altas</div>
+        <p class="card-text">Clima tropical sazonal com calor o ano todo. A vegetação desenvolveu adaptações únicas para sobreviver.</p>
+        <p class="card-source">Fonte: INMET / EMBRAPA Cerrados</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FLORA ═══ -->
+<section class="section" id="flora">
+  <p class="section-tag">Flora</p>
+  <h2 class="section-title">Plantas <em>adaptadas</em> ao fogo e à seca</h2>
+  <div class="divider"></div>
+  <p style="font-size:0.9rem;line-height:1.75;color:var(--texto-suave);margin-bottom:1.75rem">Troncos tortuosos, cascas grossas e raízes que chegam a <strong>mais de 10 metros</strong> de profundidade — a flora do Cerrado é uma obra-prima da adaptação.</p>
+  <div class="flora-grid">
+    <div class="flora-card">
+      <img class="flora-img" src="/img/ipeamarelo.jpg" alt="Ipê-amarelo" loading="lazy" onerror="this.style.background='#c8e6c9';this.alt='🌼'"/>
+      <div class="flora-body">
+        <div class="flora-name">Ipê-amarelo</div>
+        <p class="flora-desc">Símbolo do Cerrado, floresce espetacularmente na seca, quando perde as folhas.</p>
+      </div>
+    </div>
+    <div class="flora-card">
+      <img class="flora-img" src="/img/Pequizeiro.jpeg" alt="Pequizeiro" loading="lazy" onerror="this.style.background='#fff9c4';this.alt='🍑'"/>
+      <div class="flora-body">
+        <div class="flora-name">Pequizeiro</div>
+        <p class="flora-desc">Produz o pequi, fruto-símbolo da gastronomia do Centro-Oeste.</p>
+      </div>
+    </div>
+    <div class="flora-card">
+      <img class="flora-img" src="/img/barbatimão.jpg" alt="Barbatimão" loading="lazy" onerror="this.style.background='#dcedc8';this.alt='🌿'"/>
+      <div class="flora-body">
+        <div class="flora-name">Barbatimão</div>
+        <p class="flora-desc">Casca com propriedades medicinais amplamente usada na medicina popular brasileira.</p>
+      </div>
+    </div>
+    <div class="flora-card">
+      <img class="flora-img" src="/img/gramineCapimrabodeburro.jpg" alt="Gramíneas do Cerrado" loading="lazy" onerror="this.style.background='#f9fbe7';this.alt='🌾'"/>
+      <div class="flora-body">
+        <div class="flora-name">Gramínea capim-rabode-burro</div>
+        <p class="flora-desc">Cobrem o solo e são essenciais para a ciclagem de nutrientes e o regime natural de fogo.</p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:0.72rem;color:#aaa;margin-top:1.2rem">Fonte: EMBRAPA Cerrados — Adaptações do Escleromorfismo</p>
+</section>
+
+<!-- ═══ FAUNA ═══ -->
+<section style="background:#EDE0C4;padding:0.5rem 0" id="fauna">
+  <div class="section">
+    <p class="section-tag">Fauna</p>
+    <h2 class="section-title">Animais <em>emblemáticos</em></h2>
+    <div class="divider"></div>
+    <div class="fauna-grid">
+
+      <div class="fauna-card">
+        <img class="fauna-img" src="/img/lobo-guará.jpg" alt="Lobo-guará" loading="lazy" onerror="this.style.background='#ffe0b2'"/>
+        <div class="fauna-body">
+          <div class="fauna-name">Lobo-guará</div>
+          <p class="fauna-desc">Maior canídeo da América do Sul. Dispersa sementes do Cerrado.</p>
+        </div>
+      </div>
+
+      <div class="fauna-card">
+        <img class="fauna-img" src="/img/tamanduá-bandeira.jpg" alt="Tamanduá-bandeira" loading="lazy" onerror="this.style.background='#f5f5f5'"/>
+        <div class="fauna-body">
+          <div class="fauna-name">Tamanduá-bandeira</div>
+          <p class="fauna-desc">Controla populações de formigas e cupins no bioma.</p>
+        </div>
+      </div>
+
+      <div class="fauna-card">
+        <img class="fauna-img" src="/img/Tatu-canastra.jpeg" alt="Tatu-canastra" loading="lazy" onerror="this.style.background='#efebe9'"/>
+        <div class="fauna-body">
+          <div class="fauna-name">Tatu-canastra</div>
+          <p class="fauna-desc">O maior tatu do mundo, ameaçado de extinção.</p>
+        </div>
+      </div>
+
+      <div class="fauna-card">
+        <img class="fauna-img" src="/img/Veado-campeiro.jpg" alt="Veado-campeiro" loading="lazy" onerror="this.style.background='#fff8e1'"/>
+        <div class="fauna-body">
+          <div class="fauna-name">Veado-campeiro</div>
+          <p class="fauna-desc">Habita as áreas abertas do Cerrado, ágil e de porte médio.</p>
+        </div>
+      </div>
+
+      <div class="fauna-card">
+        <img class="fauna-img" src="/img/Seriema.jpg" alt="Seriema" loading="lazy" onerror="this.style.background='#fce4ec'"/>
+        <div class="fauna-body">
+          <div class="fauna-name">Seriema</div>
+          <p class="fauna-desc">Ave símbolo do Cerrado, conhecida pelo canto inconfundível.</p>
+        </div>
+      </div>
+
+      <div class="fauna-card">
+        <img class="fauna-img" src="/img/Onça-pintada.jpg" alt="Onça-pintada" loading="lazy" onerror="this.style.background='#fff3e0'"/>
+        <div class="fauna-body">
+          <div class="fauna-name">Onça-pintada</div>
+          <p class="fauna-desc">O maior felino das Américas, topo da cadeia alimentar.</p>
+        </div>
+      </div>
+
+    </div>
+    <p style="font-size:0.72rem;color:#888;margin-top:1.2rem">Fonte: ICMBio — Livro Vermelho da Fauna Ameaçada · Fotos: Wikimedia Commons (CC)</p>
+  </div>
+</section>
+
+<!-- ═══ BIODIVERSIDADE ═══ -->
+<section class="section" id="biodiversidade">
+  <p class="section-tag">Biodiversidade &amp; Características Gerais</p>
+  <h2 class="section-title">A <em>Savana Brasileira</em></h2>
+  <div class="divider"></div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <div class="card-title">Riqueza Global</div>
+      <p class="card-text">Um dos biomas mais ricos do planeta, com milhares de espécies vegetais e alto endemismo — seres que existem somente aqui.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧪</div>
+      <div class="card-title">Solo Ácido e Pobre</div>
+      <p class="card-text">Solo naturalmente ácido e pobre em nutrientes. A vida evoluiu estratégias sofisticadas para prosperar nesse ambiente adverso.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">Savana Brasileira</div>
+      <p class="card-text">Reconhecido internacionalmente como a "Savana Brasileira", comparável aos grandes biomas savânicos do mundo.</p>
+    </div>
+  </div>
+  <p style="font-size:0.72rem;color:#aaa;margin-top:1.2rem">Fonte: Ministério do Meio Ambiente (MMA) &amp; EMBRAPA</p>
+</section>
+
+<!-- ═══ CONSERVAÇÃO ═══ -->
+<section style="padding:3rem 2rem;background:var(--bege)" id="conservacao">
+  <div style="max-width:900px;margin:0 auto">
+    <div class="conservacao-wrap">
+      <p class="section-tag">Conservação</p>
+      <h2 class="section-title">Uma crise <em>urgente</em></h2>
+      <div class="divider"></div>
+      <p class="conservacao-text">Intenso desmatamento causado pela expansão da fronteira agrícola e da pecuária ameaça o bioma. A perda acelerada de habitats coloca em risco inúmeras espécies endêmicas.</p>
+      <p class="conservacao-text">É urgente ampliar as Unidades de Conservação e implementar políticas públicas efetivas de proteção.</p>
+      <div class="alert-box">
+        <p>⚠️ <strong>Mais de 50% do bioma original</strong> já foi severamente alterado pela ação humana — uma das maiores taxas de devastação entre os biomas brasileiros.</p>
+        <p style="margin-top:0.5rem;font-size:0.72rem;color:rgba(255,255,255,0.5)">Fonte: MMA — Sistema PRODES Cerrado</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CURIOSIDADES ═══ -->
+<section class="section" id="curiosidades">
+  <p class="section-tag">Curiosidades</p>
+  <h2 class="section-title">Fatos <em>surpreendentes</em></h2>
+  <div class="divider"></div>
+  <div class="curiosidades-list">
+    <div class="curiosidade-item">
+      <span class="curiosidade-icon">💧</span>
+      <p class="curiosidade-text"><strong>Berço das Águas do Brasil:</strong> O Cerrado abriga nascentes das principais bacias hidrográficas — São Francisco, Paraná e Tocantins — garantindo água para milhões de brasileiros.</p>
+    </div>
+    <div class="curiosidade-item">
+      <span class="curiosidade-icon">🌱</span>
+      <p class="curiosidade-text"><strong>Raízes-esponja:</strong> A vegetação tem raízes com mais de 10 metros de profundidade, funcionando como esponjas hidráulicas que captam água durante a longa estiagem.</p>
+    </div>
+    <div class="curiosidade-item">
+      <span class="curiosidade-icon">🐺</span>
+      <p class="curiosidade-text"><strong>Lobo-guará dispersor:</strong> Ao consumir frutos como a lobeira, o lobo-guará dispersa sementes e contribui diretamente para a regeneração natural do Cerrado.</p>
+    </div>
+    <div class="curiosidade-item">
+      <span class="curiosidade-icon">🔥</span>
+      <p class="curiosidade-text"><strong>Adaptado ao fogo:</strong> O Cerrado coexistiu com o fogo por milênios. Cascas espessas e meristemas subterrâneos permitem que a vegetação rebrote após queimadas naturais.</p>
+    </div>
+  </div>
+  <p style="font-size:0.72rem;color:#aaa;margin-top:1.5rem">Fonte: MMA / ICMBio</p>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="sources">
+    <strong>Referências</strong><br/>
+    IBGE — Mapeamento de Biomas e Território &nbsp;·&nbsp;
+    INMET / EMBRAPA Cerrados &nbsp;·&nbsp;
+    ICMBio — Livro Vermelho da Fauna Ameaçada &nbsp;·&nbsp;
+    Ministério do Meio Ambiente (MMA) &nbsp;·&nbsp;
+    Sistema PRODES Cerrado
+    <br/><br/>
+    <span style="opacity:0.45">Trabalho de Biologia — Ecologia e Meio Ambiente · Bioma Cerrado por Maria eduarda corrêa tuma:4G</span>
+  </div>
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

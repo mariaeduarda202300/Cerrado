@@ -1,0 +1,204 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --verde-cerrado: #2D5016;
+  --verde-medio: #4A7C2F;
+  --verde-claro: #7BAE4A;
+  --terra: #A0522D;
+  --amarelo-ipe: #E8C84A;
+  --bege: #F5EDD8;
+  --bege-escuro: #E8D8B0;
+  --texto: #1A1A1A;
+  --texto-suave: #4A4A4A;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bege); color: var(--texto); overflow-x: hidden; }
+
+/* ── PÉTALAS ── */
+#petals-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(45,80,22,0.7) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(74,144,184,0.3) 0%, transparent 50%),
+    linear-gradient(160deg, #1A3A08 0%, #2D5016 35%, #4A7C2F 65%, #87CEEB 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 2rem 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23F5EDD8' d='M0,140 C200,60 400,180 600,110 C800,50 1000,160 1200,90 C1350,40 1410,110 1440,100 L1440,200 L0,200 Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
+}
+
+.hero-trees {
+  position: absolute; bottom: 190px; left: 0; right: 0;
+  display: flex; justify-content: space-around; align-items: flex-end;
+  pointer-events: none;
+}
+.tree { display: flex; flex-direction: column; align-items: center; opacity: 0.22; }
+.tree-trunk { background: #1A0A00; border-radius: 4px; }
+.tree-canopy { background: #0D2006; border-radius: 50% 50% 30% 30%; }
+
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--amarelo-ipe); margin-bottom: 1.2rem;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 10vw, 7rem); font-weight: 900;
+  line-height: 0.95; color: #fff;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.4); margin-bottom: 0.5rem;
+}
+.hero-title span { color: var(--amarelo-ipe); }
+.hero-subtitle {
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem); color: rgba(255,255,255,0.8);
+  font-weight: 300; max-width: 460px; line-height: 1.6; margin-bottom: 2.5rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1.5rem 3rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Playfair Display', serif; font-size: 2.4rem;
+  font-weight: 700; color: var(--amarelo-ipe); line-height: 1;
+}
+.stat-label {
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.65); margin-top: 0.3rem;
+}
+
+/* ── NAV ── */
+.nav-pills {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,237,216,0.96); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bege-escuro);
+  padding: 0.65rem 1rem;
+  display: flex; gap: 0.4rem; justify-content: center; flex-wrap: wrap;
+}
+.pill {
+  background: transparent; border: 1.5px solid var(--verde-medio);
+  color: var(--verde-cerrado); font-size: 0.75rem; font-weight: 500;
+  padding: 0.35rem 0.9rem; border-radius: 999px; cursor: pointer;
+  transition: all 0.2s; text-decoration: none; letter-spacing: 0.03em;
+}
+.pill:hover, .pill.active { background: var(--verde-cerrado); color: #fff; border-color: var(--verde-cerrado); }
+
+/* ── SECTIONS ── */
+.section { max-width: 900px; margin: 0 auto; padding: 5rem 2rem; }
+.section-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.6rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--verde-cerrado); line-height: 1.15; margin-bottom: 1.5rem; }
+.section-title em { font-style: italic; color: var(--terra); }
+.divider { width: 3rem; height: 3px; background: var(--amarelo-ipe); border-radius: 2px; margin-bottom: 2rem; }
+
+/* ── CARDS ── */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+.card {
+  background: #fff; border-radius: 16px; padding: 1.6rem;
+  border: 1px solid var(--bege-escuro);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(45,80,22,0.12); }
+.card-icon { font-size: 1.9rem; margin-bottom: 0.7rem; }
+.card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--verde-cerrado); margin-bottom: 0.5rem; }
+.card-text { font-size: 0.87rem; line-height: 1.7; color: var(--texto-suave); }
+.card-source { font-size: 0.7rem; color: #aaa; margin-top: 0.7rem; font-style: italic; }
+
+/* ── GEO ── */
+.geo-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.estados-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.estado-chip { background: var(--verde-cerrado); color: #fff; font-size: 0.75rem; font-weight: 500; padding: 0.3rem 0.8rem; border-radius: 999px; }
+.geo-desc { font-size: 0.9rem; line-height: 1.75; color: var(--texto-suave); margin-bottom: 1.2rem; }
+
+/* ── FLORA COM IMAGEM ── */
+.flora-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+.flora-card {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--bege-escuro); transition: all 0.2s;
+}
+.flora-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(45,80,22,0.1); }
+.flora-img {
+  width: 100%; height: 140px; object-fit: cover;
+  background: #ccc;
+}
+.flora-body { padding: 1rem; }
+.flora-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--verde-cerrado); margin-bottom: 0.35rem; }
+.flora-desc { font-size: 0.8rem; color: var(--texto-suave); line-height: 1.5; }
+
+/* ── FAUNA COM IMAGEM ── */
+.fauna-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; }
+.fauna-card {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--bege-escuro); transition: all 0.2s;
+  display: flex; align-items: center; gap: 0;
+}
+.fauna-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(45,80,22,0.1); }
+.fauna-img {
+  width: 110px; height: 110px; object-fit: cover; flex-shrink: 0;
+  background: #ddd;
+}
+.fauna-body { padding: 0.9rem 1.1rem; }
+.fauna-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--verde-cerrado); margin-bottom: 0.3rem; }
+.fauna-desc { font-size: 0.78rem; color: var(--texto-suave); line-height: 1.5; }
+
+/* ── CURIOSIDADES ── */
+.curiosidades-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.curiosidade-item {
+  display: flex; gap: 1.1rem; align-items: flex-start;
+  background: #fff; border-radius: 14px; padding: 1.4rem;
+  border-left: 4px solid var(--amarelo-ipe);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.curiosidade-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+.curiosidade-text { font-size: 0.9rem; line-height: 1.7; color: var(--texto-suave); }
+
+/* ── CONSERVAÇÃO ── */
+.conservacao-wrap {
+  background: linear-gradient(135deg, var(--verde-cerrado), #1A3A08);
+  border-radius: 20px; padding: 2.5rem; color: #fff;
+}
+.conservacao-wrap .section-tag { color: var(--amarelo-ipe); }
+.conservacao-wrap .section-title { color: #fff; }
+.conservacao-wrap .divider { background: rgba(255,255,255,0.3); }
+.conservacao-text { font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 1rem; }
+.alert-box {
+  background: rgba(232,200,74,0.15); border: 1px solid rgba(232,200,74,0.4);
+  border-radius: 12px; padding: 1.2rem 1.4rem; margin-top: 1.4rem;
+}
+.alert-box p { font-size: 0.88rem; color: rgba(255,255,255,0.9); line-height: 1.7; }
+.alert-box strong { color: var(--amarelo-ipe); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--verde-cerrado); color: rgba(255,255,255,0.65);
+  text-align: center; padding: 2.5rem; font-size: 0.78rem; line-height: 1.8;
+}
+footer strong { color: #fff; }
+footer .sources { max-width: 600px; margin: 0 auto; }
+
+@media (max-width: 600px) {
+  .geo-wrap { grid-template-columns: 1fr; }
+  .fauna-img { width: 90px; height: 90px; }
+}
